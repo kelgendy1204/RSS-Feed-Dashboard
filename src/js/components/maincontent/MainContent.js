@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import AddFeed from './AddFeed';
+import FeedDetails from './FeedDetails';
+
 
 class MainContent extends Component {
 	render() {
 		return (
-			<div className='main-content'>
-				mainContent
-			</div>
+			<section>
+				<AddFeed />
+				{/*<FeedDetails />*/}
+			</section>
 		);
 	}
 }
