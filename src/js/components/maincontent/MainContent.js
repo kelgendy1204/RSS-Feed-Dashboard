@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AddFeed from './AddFeed';
-import FeedDetails from './FeedDetails';
+import FeedDetailsArea from './FeedDetailsArea';
 
 
 class MainContent extends Component {
@@ -8,7 +8,7 @@ class MainContent extends Component {
 		return (
 			<section>
 				<AddFeed />
-				{/*<FeedDetails />*/}
+				<FeedDetailsArea />
 			</section>
 		);
 	}

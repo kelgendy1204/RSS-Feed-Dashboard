@@ -1,5 +1,9 @@
 section{
 	padding: 50px;
+	height: 100%;
 	flex: 1;
 	background-color: $color5;
+	display: flex;
+	flex-direction: column;
+	margin-left: 300px;
 }
