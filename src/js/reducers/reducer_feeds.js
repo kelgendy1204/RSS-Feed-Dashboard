@@ -14,7 +14,7 @@ let defaultFeeds = [
 	{
 		id: 3,
 		name: 'tutsplus',
-		image: 'https://code.tutsplus.com/categories/rss.atom'
+		url: 'https://code.tutsplus.com/categories/rss.atom'
 	}
 ];
 

@@ -39,6 +39,10 @@
 			margin: 0 20px;
 			height: 110px;
 			border-radius: 5px;
+			background-size: cover;
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-image: url(../images/imagenotfound.jpg);
 		}
 		div.content{
 			// height: 100%;
@@ -50,6 +54,14 @@
 				margin: 0;
 				color: $color3;
 				font-size: 0.9em;
+				a{
+					text-decoration: none;
+					color: #3597db;
+					&:visted, &:focus, &:hover, &:active{
+						text-decoration: none;
+						color: #3597db;
+					}
+				}
 			}
 			div.data{
 				margin: 10px 0 0 0;
@@ -63,6 +75,9 @@
 			}
 			span{
 				font-size: 1em;
+				&:nth-child(2){
+					margin: 0 3px;
+				}
 				&.key{
 					color: grey;
 				}

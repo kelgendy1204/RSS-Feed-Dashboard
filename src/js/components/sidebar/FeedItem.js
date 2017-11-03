@@ -11,9 +11,11 @@ class FeedItem extends Component {
 
 	removeFeed(event){
 		event.stopPropagation();
-		this.props.removeFeed(this.props.data);
-		if( this.props.activeFeed.id == this.props.data.id ) {
-			this.props.activateFeed({});
+		if(confirm('are you sure you want to delete this item?')){
+			this.props.removeFeed(this.props.data);
+			if( this.props.activeFeed.id == this.props.data.id ) {
+				this.props.activateFeed({});
+			}
 		}
 	}
 

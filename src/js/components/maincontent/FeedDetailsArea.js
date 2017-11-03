@@ -7,29 +7,53 @@ class FeedDetailsArea extends Component {
 
 	constructor(props){
 		super(props);
+		this.state = { entries: [] };
 	}
 
-	loadXml(){
-		feednami.load(this.props.activeFeed.url).then(feed => {
-			console.log(feed);
+	componentDidMount() {
+		if(this.props.activeFeed){
+			this.loadXml(this.props.activeFeed.url);
+		}
+	}
+
+	componentWillReceiveProps(nextProps){
+		if(!nextProps.activeFeed.id){
+			this.setState({
+				entries: []
+			});
+			return;
+		}
+		if(this.props.activeFeed.id != nextProps.activeFeed.id){
+			this.loadXml(nextProps.activeFeed.url);
+		}
+	}
+
+	loadXml(url){
+		this.props.startLoading();
+		feednami.load(url).then(({entries}) => {
+			this.props.endLoading();
+			this.setState({
+				entries
+			});
+		}).catch(() => {
+			this.props.endLoading();
+			this.setState({
+				entries: []
+			});
+			alert('not rss feeds');
 		});
 	}
 
 	render() {
-		this.loadXml();
 		return (
 			<div className='feed-details-area'>
 				<Scrollbars>
 					<ul>
-						<FeedDetails />
-						<FeedDetails />
-						<FeedDetails />
-						<FeedDetails />
-						<FeedDetails />
-						<FeedDetails />
-						<FeedDetails />
-						<FeedDetails />
-						<FeedDetails />
+
+						{this.state.entries.map((item, key) => {
+							return <FeedDetails data={item} key={key}/>;
+						})}
+
 					</ul>
 				</Scrollbars>
 			</div>
@@ -38,7 +62,9 @@ class FeedDetailsArea extends Component {
 }
 
 FeedDetailsArea.propTypes = {
-	activeFeed: PropTypes.object.isRequired
+	activeFeed: PropTypes.object.isRequired,
+	startLoading: PropTypes.func.isRequired,
+	endLoading: PropTypes.func.isRequired
 };
 
 export default FeedDetailsArea;
