@@ -7,6 +7,13 @@ export function addFeed(feed) {
 	};
 }
 
+export function activateFeed(feed) {
+	return {
+		type: action_types.ACTIVATE_FEED,
+		payload: feed
+	};
+}
+
 export function removeFeed(feed) {
 	return {
 		type: action_types.REMOVE_FEED,

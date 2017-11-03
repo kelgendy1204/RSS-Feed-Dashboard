@@ -1,11 +1,17 @@
 // import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { removeFeed } from '../../actions/action_feeds';
+import { removeFeed, activateFeed } from '../../actions/action_feeds';
 import FeedItem from '../../components/sidebar/FeedItem';
 
 function mapDispatchToProps(dispatch) {
-	return bindActionCreators({ removeFeed } ,dispatch);
+	return bindActionCreators({ removeFeed, activateFeed } ,dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(FeedItem);
+function mapStateToProps(state) {
+	return {
+		activeFeed: state.activeFeed
+	};
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FeedItem);

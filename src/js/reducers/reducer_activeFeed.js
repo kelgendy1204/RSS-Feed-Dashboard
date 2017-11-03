@@ -8,7 +8,7 @@ let defaultActiveFeed = {
 
 export default function (state = defaultActiveFeed, action) {
 	switch (action.type) {
-		case action_types.ACTIVE_FEED:
+		case action_types.ACTIVATE_FEED:
 			return action.payload;
 	}
 	return state;
