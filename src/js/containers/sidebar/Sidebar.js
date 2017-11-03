@@ -1,6 +1,8 @@
 // import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Sidebar from '../../components/sidebar/Sidebar';
+import { bindActionCreators } from 'redux';
+import { getFeeds } from '../../actions/action_feeds';
 
 function mapStateToProps(state) {
 	return {
@@ -9,4 +11,8 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps, null)(Sidebar);
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators({ getFeeds } ,dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);

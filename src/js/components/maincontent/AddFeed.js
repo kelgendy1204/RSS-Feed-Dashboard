@@ -11,13 +11,10 @@ class AddFeed extends Component {
 	addFeed(e){
 		e.preventDefault();
 
-		let id = this.props.feeds.length + 1;
 		let name = this.feedName.value;
 		let url = this.feedUrl.value;
 
-		this.props.addFeed({
-			id, name, url
-		});
+		this.props.addFeed({ name, url });
 
 		this.feedName.value = '';
 		this.feedUrl.value = '';

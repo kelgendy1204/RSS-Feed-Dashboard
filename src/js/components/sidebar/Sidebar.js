@@ -4,6 +4,15 @@ import { Scrollbars } from 'react-custom-scrollbars';
 import PropTypes from 'prop-types';
 
 class Sidebar extends Component {
+
+	constructor(props){
+		super(props);
+	}
+
+	componentDidMount() {
+		this.props.getFeeds();
+	}
+
 	render() {
 		return (
 			<aside>
@@ -18,6 +27,7 @@ class Sidebar extends Component {
 
 Sidebar.propTypes = {
 	feeds: PropTypes.array.isRequired,
+	getFeeds: PropTypes.func.isRequired,
 	activeFeed: PropTypes.object.isRequired
 };
 

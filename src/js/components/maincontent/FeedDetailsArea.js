@@ -11,7 +11,7 @@ class FeedDetailsArea extends Component {
 	}
 
 	componentDidMount() {
-		if(this.props.activeFeed){
+		if(this.props.activeFeed.id){
 			this.loadXml(this.props.activeFeed.url);
 		}
 	}
