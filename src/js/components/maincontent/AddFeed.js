@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class AddFeed extends Component {
 
@@ -35,7 +36,7 @@ class AddFeed extends Component {
 					</div>
 					<div>
 						<label>Feed URL : </label>
-						<input required title="url to xml file" pattern=".+\.xml$" type='text' ref={(input) => { this.feedUrl = input; }} />
+						<input required title="http(s)://link_to_rss_file" pattern="https?://.+" type='text' ref={(input) => { this.feedUrl = input; }} />
 					</div>
 					<button type='submit'>
 						Add Feed
@@ -45,5 +46,10 @@ class AddFeed extends Component {
 		);
 	}
 }
+
+AddFeed.propTypes = {
+	addFeed: PropTypes.func.isRequired,
+	feeds: PropTypes.array.isRequired
+};
 
 export default AddFeed;
