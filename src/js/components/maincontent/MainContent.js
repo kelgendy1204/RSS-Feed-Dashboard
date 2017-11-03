@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AddFeed from './AddFeed';
+import AddFeed from '../../containers/maincontent/AddFeed';
 import FeedDetailsArea from './FeedDetailsArea';
 
 

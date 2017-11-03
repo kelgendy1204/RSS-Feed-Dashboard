@@ -9,9 +9,7 @@ class Sidebar extends Component {
 			<aside>
 				<Scrollbars>
 					<h1>MY FEED</h1>
-
-					{this.props.feeds.map((elem , key) => <FeedItem data={elem} key={key} />)}
-
+					{this.props.feeds.map((elem , key) => <FeedItem isActive={this.props.activeFeed.id == elem.id} data={elem} key={key} />)}
 				</Scrollbars>
 			</aside>
 		);
@@ -19,7 +17,8 @@ class Sidebar extends Component {
 }
 
 Sidebar.propTypes = {
-	feeds: PropTypes.array.isRequired
+	feeds: PropTypes.array.isRequired,
+	activeFeed: PropTypes.object.isRequired
 };
 
 export default Sidebar;
