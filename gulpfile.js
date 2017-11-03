@@ -106,23 +106,6 @@ const pagesArr = ['app'];
 	}
 }());
 
-// gulp.task('global', ['watch:global']);
-
-// gulp.task('watch:global', () => {
-
-//  gulp.watch(`${mainSrcFolder}pages/global/**/*.scss`, pagesArr.map(function(page) {
-//      return `css:dev:${page}`;
-//  }));
-//  gulp.watch(`${mainSrcFolder}pages/global/**/*.scss`, (vinyle) => {
-//      lintSass(vinyle.path);
-//  });
-
-//  gulp.watch(`${mainSrcFolder}pages/global/js/**/*.js`, (vinyle) => {
-//      lintFile(vinyle.path);
-//  });
-
-// });
-
 function lintFile(file) {
 	return gulp.src(file)
 		.pipe(eslint({
@@ -290,31 +273,9 @@ gulp.task('serve', function() {
 
 });
 
-gulp.task('copyFonts', () => {
-	return gulp.src([`${mainSrcFolder}fonts/**/*`])
-		.pipe(gulp.dest(`${mainDestFolder}fonts`));
-});
-
-gulp.task('watch:copyFonts', () => {
-	gulp.watch(`${mainSrcFolder}fonts/**/*`, ['copyFonts']);
-});
-
-gulp.task('copyUncompiledScripts', () => {
-	return gulp.src([`${mainSrcFolder}uncompiled/**/*.js`])
-		.pipe(gulp.dest(`${mainDestFolder}js`));
-});
-
-gulp.task('watch:copyUncompiledScripts', () => {
-	gulp.watch(`${mainSrcFolder}uncompiled/**/*.js`, ['copyUncompiledScripts']);
-});
-
 gulp.task('handleimages', ['imagemin', 'watch:imagemin']);
 
-gulp.task('handleviews', ['copyviews', 'watch:copyviews']);
-
-gulp.task('copyfiles', ['copyUncompiledScripts', 'watch:copyUncompiledScripts', 'copyFonts', 'watch:copyFonts']);
-
-gulp.task('develop', gulpSequence('clean', pagesArr.concat(['copyfiles', 'handleimages']), 'serve'));
+gulp.task('develop', gulpSequence('clean', pagesArr.concat(['handleimages']), 'serve'));
 
 function swallowError(error) {
 	gutil.log(gutil.colors.red(error.toString()));
@@ -322,4 +283,4 @@ function swallowError(error) {
 	this.emit('end');
 }
 
-gulp.task('prod', gulpSequence('clean', 'copyUncompiledScripts', 'copyFonts', 'imagemin', 'lint', ['css', 'js'], 'compress'));
+gulp.task('run', gulpSequence('clean', 'imagemin', 'lint', ['css', 'js'], 'compress', 'serve'));

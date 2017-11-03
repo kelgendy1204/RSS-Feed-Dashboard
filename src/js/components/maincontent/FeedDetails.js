@@ -17,10 +17,10 @@ class FeedDetails extends Component {
 
 	render() {
 		return (
-			<li className="feed-details">
-				<div className="img" style={{backgroundImage: this.props.data.image.url}}></div>
-				<div className="content">
-					<h3><a href={this.props.data.link ? this.props.data.link : '#'}>{this.props.data.title}</a></h3>
+			<li className='feed-details'>
+				<div className='img' style={{backgroundImage: this.props.data.image.url}}></div>
+				<div className='content'>
+					<h3><a target='_blank' href={this.props.data.link ? this.props.data.link : '#'}>{this.props.data.title}</a></h3>
 					<div className='data'>
 					{
 						Object.keys(this.props.data).map((key, index) => {

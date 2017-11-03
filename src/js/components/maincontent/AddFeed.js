@@ -33,7 +33,7 @@ class AddFeed extends Component {
 					</div>
 					<div>
 						<label>Feed URL : </label>
-						<input required title="http(s)://link_to_rss_file" pattern="https?://.+" type='text' ref={(input) => { this.feedUrl = input; }} />
+						<input required title='http(s)://link_to_rss_file' pattern='https?://.+' type='text' ref={(input) => { this.feedUrl = input; }} />
 					</div>
 					<button type='submit'>
 						Add Feed
