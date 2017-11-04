@@ -181,16 +181,16 @@ gulp.task('css', () => {
 		}),
 		shortcss(),
 		mqpacker(),
-		cssnano({
-			autoprefixer: false,
-			discardComments: {
-				removeAll: true
-			},
-			discardUnused: false,
-			mergeIdents: false,
-			reduceIdents: false,
-			zindex: false
-		})
+		// cssnano({
+		// 	autoprefixer: false,
+		// 	discardComments: {
+		// 		removeAll: true
+		// 	},
+		// 	discardUnused: false,
+		// 	mergeIdents: false,
+		// 	reduceIdents: false,
+		// 	zindex: false
+		// })
 	];
 
 	let stream = merge();
