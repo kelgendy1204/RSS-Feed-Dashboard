@@ -10,9 +10,11 @@ class FeedItem extends Component {
 	}
 
 	removeFeed(event){
+		// stop event propagation to prevent feed activation
 		event.stopPropagation();
-		if(confirm('are you sure you want to delete this item?')){
+		if(confirm('Are you sure you want to delete this feed?')){
 			this.props.removeFeed(this.props.data);
+			// remove feed activation if exist
 			if( this.props.activeFeed.id == this.props.data.id ) {
 				this.props.activateFeed({});
 			}

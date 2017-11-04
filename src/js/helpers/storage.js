@@ -1,3 +1,6 @@
+// using localstorage for data persistence
+
+// feeds key name in localstorage
 let feedsName = 'rss-feeds';
 
 function getFeeds() {
@@ -32,13 +35,12 @@ function deleteFeed(feed) {
 	return newFeeds;
 }
 
+// generate unique id for every feed
 function generateUniqueId() {
-
 	function s4() {
 		return Math.floor((1 + Math.random()) * 100000);
 	}
 	let timestamp = new Date().getTime();
-
 	return Number(s4().toString() + timestamp.toString());
 }
 

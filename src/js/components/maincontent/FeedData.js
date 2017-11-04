@@ -9,8 +9,9 @@ class FeedData extends Component {
 		this.createMarkup = this.createMarkup.bind(this);
 	}
 
-
 	createMarkup(html) {
+		// for script injection
+		html = !html.includes('<script>') ? html : '';
 		return {__html: html};
 	}
 

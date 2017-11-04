@@ -28,6 +28,7 @@ class FeedDetailsArea extends Component {
 		}
 	}
 
+	// loading xml data using feednami service
 	loadXml(url){
 		this.props.startLoading();
 		feednami.load(url).then(({entries}) => {
@@ -40,7 +41,7 @@ class FeedDetailsArea extends Component {
 			this.setState({
 				entries: []
 			});
-			alert('not rss feeds');
+			alert('Not rss feeds');
 		});
 	}
 

@@ -8,6 +8,7 @@ class FeedDetails extends Component {
 		this.filterkey = this.filterkey.bind(this);
 	}
 
+	// filtering feeds data the will be shown
 	filterkey(key){
 		if((key.includes('rss:') || (key.includes('atom:'))) && (!key.includes(':@')) && (!key.includes(':link')) && (!key.includes(':guid')) && (!key.includes(':id')) ) {
 			return key.replace('rss:', '').replace('atom:', '');
@@ -16,9 +17,12 @@ class FeedDetails extends Component {
 	}
 
 	render() {
+		let feedImage = this.props.data.image.url ? this.props.data.image.url : false;
 		return (
 			<li className='feed-details'>
-				<div className='img' style={{backgroundImage: this.props.data.image.url}}></div>
+				<a target='_blank' href={this.props.data.link ? this.props.data.link : '#'}>
+					<div className='img' style={{backgroundImage: feedImage ? 'url(' + feedImage + ')' : ''}}></div>
+				</a>
 				<div className='content'>
 					<h3><a target='_blank' href={this.props.data.link ? this.props.data.link : '#'}>{this.props.data.title}</a></h3>
 					<div className='data'>
@@ -40,4 +44,5 @@ class FeedDetails extends Component {
 FeedDetails.propTypes = {
 	data: PropTypes.object.isRequired
 };
+
 export default FeedDetails;

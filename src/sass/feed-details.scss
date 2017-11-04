@@ -35,9 +35,12 @@
 		&:nth-child(2n){
 			background-color: #eeeeef;
 		}
+		>a{
+			margin: 0 20px;
+			display: inline-block;
+		}
 		div.img{
 			width: 150px;
-			margin: 0 20px;
 			height: 110px;
 			border-radius: 5px;
 			background-size: cover;
