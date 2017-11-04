@@ -32,5 +32,3 @@ Tools
  - [gulp](https://gulpjs.com/) task runner
  - [Browserify](http://browserify.org/) with [babeljs](https://babeljs.io/) for modules Bundling
  - [postcss](http://postcss.org/) with [sass](http://sass-lang.com/) for styling
-
-> **Note:** The design isn't responsive.
