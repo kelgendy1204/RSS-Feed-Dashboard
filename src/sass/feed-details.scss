@@ -29,6 +29,7 @@
 		padding: 25px 15px;
 		display: flex;
 		align-items: flex-start;
+
 		&:nth-child(1n){
 			background-color: #FFF;
 		}
@@ -39,6 +40,7 @@
 			margin: 0 20px;
 			display: inline-block;
 		}
+
 		div.img{
 			width: 150px;
 			height: 110px;
@@ -91,5 +93,14 @@
 				}
 			}
 		}
+
+		@media screen and (max-width: 768px) {
+			flex-direction: column;
+			div.content{
+				margin: 20px;
+				flex: none;
+			}
+		}
+
 	}
 }
