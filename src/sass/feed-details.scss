@@ -59,10 +59,10 @@
 				font-size: 0.9em;
 				a{
 					text-decoration: none;
-					color: #3597db;
+					color: $color3;
 					&:visted, &:focus, &:hover, &:active{
 						text-decoration: none;
-						color: #3597db;
+						color: $color3;
 					}
 				}
 			}
