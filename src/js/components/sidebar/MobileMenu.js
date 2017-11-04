@@ -6,9 +6,11 @@ import Sidebar from '../../containers/sidebar/Sidebar';
 class MobileMenu extends Component {
 	render() {
 		return (
-			<Menu>
-				<Sidebar />
-			</Menu>
+			<div className='mobile-menu'>
+				<Menu>
+					<Sidebar />
+				</Menu>
+			</div>
 		);
 	}
 }

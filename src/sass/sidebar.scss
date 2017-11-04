@@ -87,7 +87,7 @@ aside{
 
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: $breakingpoint) {
 	.rss-app {
 		>aside{
 				display: none;
