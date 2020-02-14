@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { getFeeds } from '../../actions/action_feeds';
 import FeedItem from '../../containers/sidebar/FeedItem';
 import { Scrollbars } from 'react-custom-scrollbars';
 import PropTypes from 'prop-types';
@@ -31,4 +34,15 @@ Sidebar.propTypes = {
 	activeFeed: PropTypes.object.isRequired
 };
 
-export default Sidebar;
+function mapStateToProps(state) {
+	return {
+		feeds: state.feeds,
+		activeFeed: state.activeFeed,
+	};
+}
+
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators({ getFeeds } ,dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);

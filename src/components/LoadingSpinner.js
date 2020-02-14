@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 class LoadingSpinner extends Component {
@@ -15,4 +16,10 @@ LoadingSpinner.propTypes = {
 	loading: PropTypes.bool.isRequired
 };
 
-export default LoadingSpinner;
+function mapStateToProps(state) {
+	return {
+		loading: state.loading
+	};
+}
+
+export default connect(mapStateToProps, null)(LoadingSpinner);

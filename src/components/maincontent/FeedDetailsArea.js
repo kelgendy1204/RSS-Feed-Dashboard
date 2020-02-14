@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as loader from '../../actions/action_loading';
 import { Scrollbars } from 'react-custom-scrollbars';
 import FeedDetails from './FeedDetails';
 import PropTypes from 'prop-types';
@@ -69,4 +72,14 @@ FeedDetailsArea.propTypes = {
 	endLoading: PropTypes.func.isRequired
 };
 
-export default FeedDetailsArea;
+function mapStateToProps(state) {
+	return {
+		activeFeed: state.activeFeed
+	};
+}
+
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators(loader ,dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FeedDetailsArea);

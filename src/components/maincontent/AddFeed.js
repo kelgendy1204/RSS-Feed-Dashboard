@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { addFeed } from '../../actions/action_feeds';
 import PropTypes from 'prop-types';
 
 class AddFeed extends Component {
@@ -49,4 +52,14 @@ AddFeed.propTypes = {
 	feeds: PropTypes.array.isRequired
 };
 
-export default AddFeed;
+function mapStateToProps(state) {
+	return {
+		feeds: state.feeds
+	};
+}
+
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators({ addFeed } ,dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddFeed);
