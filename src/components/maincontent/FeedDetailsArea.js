@@ -31,6 +31,7 @@ class FeedDetailsArea extends Component {
 	// loading xml data using feednami service
 	loadXml(url){
 		this.props.startLoading();
+        // eslint-disable-next-line
 		feednami.load(url).then(({entries}) => {
 			this.props.endLoading();
 			this.setState({

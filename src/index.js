@@ -5,11 +5,12 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import PropTypes from 'prop-types';
 import Reducers from './reducers';
+import './styles/style.scss';
 
 let store = createStore(
-	Reducers
+	Reducers,
 	// for development purpose
-	// window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 const RssFeeds = ({ store }) => (
@@ -24,5 +25,5 @@ RssFeeds.propTypes = {
 
 ReactDOM.render(
 	<RssFeeds store={store} />,
-	document.getElementById('rssfeeds')
+	document.getElementById('root')
 );

@@ -12,6 +12,7 @@ class FeedItem extends Component {
 	removeFeed(event){
 		// stop event propagation to prevent feed activation
 		event.stopPropagation();
+        // eslint-disable-next-line
 		if(confirm('Are you sure you want to delete this feed?')){
 			this.props.removeFeed(this.props.data);
 			// remove feed activation if exist

@@ -9,11 +9,7 @@ For compiling and running
  - git clone https://github.com/kelgendy1204/RSS-Feed-Dashboard.git
  - cd RSS-Feed-Dashboard
  - yarn
- - gulp run
- - open your browser at http://localhost:3000
-
-**For development purpose only :**
- - You can type `gulp develop` instead of `gulp run`
+ - yarn start
 
 ----------
 
@@ -29,6 +25,4 @@ Technologies and libraries Used
 
 Tools
 -------------
- - [gulp](https://gulpjs.com/) task runner
- - [Browserify](http://browserify.org/) with [babeljs](https://babeljs.io/) for modules Bundling
- - [postcss](http://postcss.org/) with [sass](http://sass-lang.com/) for styling
+ - Create react app
