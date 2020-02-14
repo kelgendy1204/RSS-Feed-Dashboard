@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { slide as Menu } from 'react-burger-menu';
-import Sidebar from '../../containers/sidebar/Sidebar';
+import Sidebar from './Sidebar';
 
 class MobileMenu extends Component {
 	render() {

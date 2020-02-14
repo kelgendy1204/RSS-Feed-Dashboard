@@ -2,15 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getFeeds } from '../../actions/action_feeds';
-import FeedItem from '../../containers/sidebar/FeedItem';
+import FeedItem from './FeedItem';
 import { Scrollbars } from 'react-custom-scrollbars';
 import PropTypes from 'prop-types';
 
 class Sidebar extends Component {
-
-	constructor(props){
-		super(props);
-	}
 
 	componentDidMount() {
 		this.props.getFeeds();

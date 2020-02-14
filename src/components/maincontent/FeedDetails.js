@@ -20,11 +20,11 @@ class FeedDetails extends Component {
 		let feedImage = this.props.data.image.url ? this.props.data.image.url : false;
 		return (
 			<li className='feed-details'>
-				<a target='_blank' href={this.props.data.link ? this.props.data.link : '#'}>
+				<a target='_blank' rel="noopener noreferrer" href={this.props.data.link ? this.props.data.link : '#'}>
 					<div className='img' style={{backgroundImage: feedImage ? 'url(' + feedImage + ')' : ''}}></div>
 				</a>
 				<div className='content'>
-					<h3><a target='_blank' href={this.props.data.link ? this.props.data.link : '#'}>{this.props.data.title}</a></h3>
+					<h3><a target='_blank' rel="noopener noreferrer" href={this.props.data.link ? this.props.data.link : '#'}>{this.props.data.title}</a></h3>
 					<div className='data'>
 					{
 						Object.keys(this.props.data).map((key, index) => {
@@ -32,6 +32,7 @@ class FeedDetails extends Component {
 							if(feedKey) {
 								return (<FeedData key={index} data={ {key : feedKey, value : this.props.data[key]['#']} } />);
 							}
+							return null;
 						})
 					}
 					</div>

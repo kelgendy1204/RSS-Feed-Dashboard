@@ -8,6 +8,7 @@ export default function (state = defaultLoading, action) {
 			return true;
 		case action_types.END_LOADING:
 			return false;
+		default:
+			return state;
 	}
-	return state;
 }

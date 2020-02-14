@@ -13,6 +13,7 @@ export default function (state = [], action) {
 			return [
 				...state.filter(elem => elem.id != action.payload.id)
 			];
+		default:
+			return state;
 	}
-	return state;
 }
