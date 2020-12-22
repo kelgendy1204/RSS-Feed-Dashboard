@@ -42,7 +42,7 @@
     "imagemin-pngquant": "^5.0.0",
     "imagemin-svgo": "^5.2.0",
     "merge-stream": "^1.0.0",
-    "node-notifier": "^5.0.2",
+    "node-notifier": "^8.0.1",
     "postcss-cssnext": "^2.10.0",
     "postcss-short": "^3.0.3",
     "pump": "^1.0.1",
